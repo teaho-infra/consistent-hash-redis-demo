@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev,mock
+
+app:
+  cache:
+    redis:
+      hostName: 192.168.63.163
+      port: 11110
+      database: 1
+      password:
+

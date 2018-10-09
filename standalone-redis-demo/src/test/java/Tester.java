@@ -22,7 +22,8 @@ public class Tester {
     @Test
     public void testSetKey() throws Exception {
         Cache cache = cacheManager.getCache("USER");
-        String s = cache.get("user1", () -> "user1name");
+        String s = cache.get("user2", () -> "user2name");
+//        cache.get("user2");
         LOG.info(s);
     }
 }

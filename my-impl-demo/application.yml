@@ -1,3 +1,16 @@
 spring:
   profiles:
     active: dev,mock
+app:
+  cache:
+    redis:
+      list:
+        - hostName: 192.168.63.163
+          port: 11110
+          database: 0
+          password:
+        - hostName: 192.168.63.163
+          port: 11120
+          database: 0
+          password:
+

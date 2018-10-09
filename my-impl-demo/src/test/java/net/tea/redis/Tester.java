@@ -1,5 +1,6 @@
 package net.tea.redis;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -27,18 +29,17 @@ public class Tester {
     @Test
     public void testSetKey() throws Exception {
 
-        LOG.info(setKey());
+        LOG.info(setKey().toString());
         TimeUnit.SECONDS.sleep(10);
-        LOG.info(setKey());
+        LOG.info(setKey().toString());
 
     }
 
-    public String setKey() {
+    public List<String> setKey() {
         Cache c = cacheManager.getCache("USER");
         return c.get("user1", () -> {
             LOG.info("calling !!!!!!!!");
-
-            return "tea";
+            return Lists.asList("1", new String[]{"2", "3"});
         });
     }
 

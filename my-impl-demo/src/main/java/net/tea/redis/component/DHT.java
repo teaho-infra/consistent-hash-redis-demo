@@ -1,6 +1,5 @@
 package net.tea.redis.component;
 
-import net.tea.redis.algorithm.Fnv1_32Hash;
 import net.tea.redis.algorithm.Hash;
 import net.tea.redis.algorithm.MurmurHash;
 
@@ -29,7 +28,7 @@ public class DHT<T> {
     }
 
     public DHT(List<T> nodes, int virtualNodeNum, Hash nodeHashing) {
-        this(nodes, 2 << 7, nodeHashing, new Fnv1_32Hash());
+        this(nodes, 2 << 7, nodeHashing, new MurmurHash());
     }
 
     public DHT(List<T> nodes, int virtualNodeNum, Hash nodeHashing, Hash keyHashing) {
